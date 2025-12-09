@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Project Assignment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>🚀 Tech Co. Project Assignment Dashboard</h1>
+
+    <div id="messages"><?php echo $message; ?></div>
+
+    <section>
+        <h2>Assign Employee to Project</h2>
+        <form action="index.php" method="POST" id="assignmentForm">
+            <label for="employee_id">Employee:</label>
+            <select name="employee_id" id="employee_id" required>
+                <option value="">-- Select Employee --</option>
+                <?php while($row = $employees_result->fetch_assoc()): ?>
+                    <option value="<?php echo htmlspecialchars($row['employee_id']); ?>">
+                        <?php echo htmlspecialchars($row['name']); ?>
+                    </option>
+                <?php endwhile; ?>
+            </select>
+            
+            <label for="project_id">Project:</label>
+            <select name="project_id" id="project_id" required>
+                <option value="">-- Select Project --</option>
+                <?php while($row = $projects_result->fetch_assoc()): ?>
+                    <option value="<?php echo htmlspecialchars($row['project_id']); ?>">
+                        <?php echo htmlspecialchars($row['project_name']); ?>
+                    </option>
+                <?php endwhile; ?>
+            </select>
+            
+            <button type="submit" name="assign">Assign</button>
+        </form>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Current Project Assignments</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Project Name</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if ($assignments_result->num_rows > 0): ?>
+                    <?php while($row = $assignments_result->fetch_assoc()): ?>
+                        <tr>
+                            <td><?php echo htmlspecialchars($row['employee_name']); ?></td>
+                            <td><?php echo htmlspecialchars($row['project_name']); ?></td>
+                            <td><?php echo htmlspecialchars($row['status']); ?></td>
+                        </tr>
+                    <?php endwhile; ?>
+                <?php else: ?>
+                    <tr><td colspan="3">No projects are currently assigned.</td></tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

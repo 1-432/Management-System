@@ -1,0 +1,94 @@
+body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     margin: 40px;
+     background-color: #f4f7f9;
+     color: #333;
+ }
+ 
+ h1 {
+     color: #007bff;
+     border-bottom: 3px solid #007bff;
+     padding-bottom: 10px;
+     text-align: center;
+ }
+ 
+ section {
+     width: 80%;
+     max-width: 700px;
+     margin: 30px auto;
+     background: #ffffff;
+     padding: 25px;
+     border-radius: 8px;
+     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+ }
+ 
+ label {
+     display: block;
+     margin-top: 15px;
+     margin-bottom: 5px;
+     font-weight: 600;
+ }
+ 
+ select, button {
+     width: 100%;
+     padding: 12px;
+     border-radius: 6px;
+     font-size: 16px;
+     box-sizing: border-box;
+ }
+ 
+ select {
+     border: 1px solid #ccc;
+     background-color: #f9f9f9;
+ }
+ 
+ button {
+     background-color: #28a745;
+     color: white;
+     cursor: pointer;
+     border: none;
+     margin-top: 25px;
+     transition: background-color 0.3s;
+ }
+ 
+ button:hover {
+     background-color: #1e7e34;
+ }
+ 
+ table {
+     width: 100%;
+     border-collapse: collapse;
+     margin-top: 20px;
+ }
+ 
+ th, td {
+     border: 1px solid #ddd;
+     padding: 10px;
+     text-align: left;
+ }
+ 
+ th {
+     background-color: #e9ecef;
+     color: #495057;
+     font-weight: bold;
+ }
+ 
+ .success-message {
+     color: #28a745;
+     background-color: #d4edda;
+     border: 1px solid #c3e6cb;
+     padding: 10px;
+     margin-bottom: 20px;
+     border-radius: 5px;
+     text-align: center;
+ }
+ 
+ .error-message {
+     color: #dc3545;
+     background-color: #f8d7da;
+     border: 1px solid #f5c6cb;
+     padding: 10px;
+     margin-bottom: 20px;
+     border-radius: 5px;
+     text-align: center;
+ }
